@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Privacy Policy — Flowly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --bg:        #080C1A;
+      --bg2:       #0D1225;
+      --border:    rgba(255,255,255,0.07);
+      --cyan:      #00C8FF;
+      --purple:    #B400FF;
+      --green:     #00FF96;
+      --orange:    #FF8C00;
+      --white:     #FFFFFF;
+      --white60:   rgba(255,255,255,0.60);
+      --white30:   rgba(255,255,255,0.30);
+      --white10:   rgba(255,255,255,0.07);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--white60);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      line-height: 1.8;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* ── Background mesh ── */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 60% 50% at 10% 10%, rgba(0,200,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 50% 60% at 90% 80%, rgba(180,0,255,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 40% at 50% 50%, rgba(0,255,150,0.03) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 24px 80px;
+    }
+
+    /* ── Header ── */
+    header {
+      padding: 60px 0 48px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 12px;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .logo-tubes {
+      display: flex;
+      gap: 5px;
+      align-items: flex-end;
+    }
+
+    .tube {
+      width: 10px;
+      border-radius: 5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tube::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 5px;
+      background: linear-gradient(to right, rgba(255,255,255,0.25), transparent 60%);
+    }
+
+    .t1 { height: 32px; background: linear-gradient(to bottom, var(--cyan)   40%, rgba(0,200,255,0.3));   box-shadow: 0 0 12px rgba(0,200,255,0.5); }
+    .t2 { height: 26px; background: linear-gradient(to bottom, var(--purple) 40%, rgba(180,0,255,0.3));   box-shadow: 0 0 12px rgba(180,0,255,0.5); }
+    .t3 { height: 30px; background: linear-gradient(to bottom, var(--green)  40%, rgba(0,255,150,0.3));   box-shadow: 0 0 12px rgba(0,255,150,0.5); }
+    .t4 { height: 22px; background: linear-gradient(to bottom, var(--orange) 40%, rgba(255,140,0,0.3));   box-shadow: 0 0 12px rgba(255,140,0,0.5); }
+
+    .app-name {
+      font-family: 'Syne', sans-serif;
+      font-size: 28px;
+      font-weight: 800;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      letter-spacing: -0.5px;
+    }
+
+    h1 {
+      font-family: 'Syne', sans-serif;
+      font-size: clamp(32px, 6vw, 52px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.1;
+      letter-spacing: -1px;
+    }
+
+    h1 span {
+      background: linear-gradient(90deg, var(--cyan) 0%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .meta {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .meta-pill {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--white30);
+      background: var(--white10);
+      border: 1px solid var(--border);
+      padding: 4px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+
+    /* ── Divider ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, var(--cyan), var(--purple), transparent);
+      opacity: 0.3;
+      margin: 8px 0 40px;
+    }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 48px;
+    }
+
+    h2 {
+      font-family: 'Syne', sans-serif;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 18px;
+      border-radius: 2px;
+      background: linear-gradient(to bottom, var(--cyan), var(--purple));
+      flex-shrink: 0;
+    }
+
+    p {
+      margin-bottom: 12px;
+      color: var(--white60);
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    ul li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--white60);
+    }
+
+    ul li::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: var(--cyan);
+      font-size: 12px;
+      top: 3px;
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--white10);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 12px;
+    }
+
+    .card-title {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .badge {
+      font-size: 10px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 10px;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-ads     { background: rgba(0,200,255,0.15); color: var(--cyan); }
+    .badge-iap     { background: rgba(180,0,255,0.15); color: var(--purple); }
+    .badge-local   { background: rgba(0,255,150,0.15); color: var(--green); }
+
+    .highlight-box {
+      background: linear-gradient(135deg, rgba(0,200,255,0.05), rgba(180,0,255,0.05));
+      border: 1px solid rgba(0,200,255,0.2);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-top: 16px;
+    }
+
+    .highlight-box p {
+      color: rgba(0,200,255,0.85);
+      font-size: 13.5px;
+      margin: 0;
+    }
+
+    /* ── Contact ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(0,200,255,0.06), rgba(180,0,255,0.06));
+      border: 1px solid rgba(0,200,255,0.2);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .contact-card a {
+      color: var(--cyan);
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .contact-card a:hover { text-decoration: underline; }
+
+    /* ── Footer ── */
+    footer {
+      margin-top: 60px;
+      padding-top: 28px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    footer p {
+      font-size: 12px;
+      color: var(--white30);
+      margin: 0;
+    }
+
+    .footer-logo {
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--cyan), var(--purple));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ── Fade-in animation ── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    header, section {
+      animation: fadeUp 0.6s ease both;
+    }
+
+    section:nth-child(2)  { animation-delay: 0.05s; }
+    section:nth-child(3)  { animation-delay: 0.10s; }
+    section:nth-child(4)  { animation-delay: 0.15s; }
+    section:nth-child(5)  { animation-delay: 0.20s; }
+    section:nth-child(6)  { animation-delay: 0.25s; }
+    section:nth-child(7)  { animation-delay: 0.30s; }
+    section:nth-child(8)  { animation-delay: 0.35s; }
+    section:nth-child(9)  { animation-delay: 0.40s; }
+    section:nth-child(10) { animation-delay: 0.45s; }
+
+    @media (max-width: 500px) {
+      h1 { font-size: 28px; }
+      .wrap { padding: 0 16px 60px; }
+      header { padding: 40px 0 32px; }
+    }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-row">
+      <div class="logo-tubes">
+        <div class="tube t1"></div>
+        <div class="tube t2"></div>
+        <div class="tube t3"></div>
+        <div class="tube t4"></div>
+      </div>
+      <span class="app-name">Flowly</span>
+    </div>
+    <h1>Privacy <span>Policy</span></h1>
+    <div class="meta">
+      <span class="meta-pill">Effective: June 1, 2025</span>
+      <span class="meta-pill">Last updated: June 1, 2025</span>
+      <span class="meta-pill">Developer: chAs Tech Group</span>
+    </div>
+  </header>
+
+  <div class="divider"></div>
+
+  <!-- 1. Introduction -->
+  <section>
+    <h2>Introduction</h2>
+    <p>
+      Welcome to <strong style="color:var(--white)">Flowly</strong> — a color-sort puzzle game developed
+      by <strong style="color:var(--white)">chAs Tech Group</strong>. This Privacy Policy explains what
+      information is collected when you use Flowly, how it is used, and your rights regarding that information.
+    </p>
+    <p>
+      By downloading or playing Flowly you agree to the practices described in this policy.
+      If you do not agree, please discontinue use of the app.
+    </p>
+  </section>
+
+  <!-- 2. Information We Collect -->
+  <section>
+    <h2>Information We Collect</h2>
+
+    <div class="card">
+      <div class="card-title">
+        Advertising Data
+        <span class="badge badge-ads">ADMOB</span>
+      </div>
+      <p>
+        Flowly uses <strong style="color:var(--white)">Google AdMob</strong> to display advertisements.
+        AdMob may collect your device's Advertising ID, IP address, device identifiers, and general
+        location (country/region) to serve relevant ads and measure ad performance.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        Purchase Data
+        <span class="badge badge-iap">IN-APP PURCHASES</span>
+      </div>
+      <p>
+        If you purchase a Remove Ads plan, the transaction is processed entirely by
+        <strong style="color:var(--white)">Google Play Billing</strong>. Flowly does not receive
+        or store your payment card details. We only store the expiry timestamp of your purchase
+        locally on your device.
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">
+        Game Progress
+        <span class="badge badge-local">LOCAL ONLY</span>
+      </div>
+      <p>
+        Your game data — completed levels, hints remaining, daily streak, and settings — is saved
+        only on your device using Android SharedPreferences. This data never leaves your device
+        and is not transmitted to any server.
+      </p>
+    </div>
+
+    <div class="highlight-box">
+      <p>
+        ✦ Flowly does not require account registration. We do not collect your name,
+        email address, phone number, or any personally identifiable information directly.
+      </p>
+    </div>
+  </section>
+
+  <!-- 3. How We Use Information -->
+  <section>
+    <h2>How We Use Information</h2>
+    <ul>
+      <li>To display advertisements through Google AdMob and generate revenue that keeps Flowly free</li>
+      <li>To verify and apply in-app purchases (Remove Ads plans)</li>
+      <li>To save your game progress locally on your device</li>
+      <li>To improve ad relevance via the Advertising ID (only if you have not opted out)</li>
+    </ul>
+  </section>
+
+  <!-- 4. Third-Party Services -->
+  <section>
+    <h2>Third-Party Services</h2>
+    <p>Flowly integrates the following third-party SDKs. Each has its own privacy policy:</p>
+
+    <div class="card">
+      <div class="card-title">Google AdMob (Google LLC)</div>
+      <p>Used to serve banner, interstitial, and rewarded video advertisements.</p>
+      <p>
+        <a href="https://policies.google.com/privacy" target="_blank"
+           style="color:var(--cyan);text-decoration:none;font-weight:500;">
+          policies.google.com/privacy →
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Google Play Billing (Google LLC)</div>
+      <p>Used to process in-app purchases for Remove Ads plans.</p>
+      <p>
+        <a href="https://play.google.com/about/play-terms/" target="_blank"
+           style="color:var(--purple);text-decoration:none;font-weight:500;">
+          play.google.com/about/play-terms →
+        </a>
+      </p>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Connectivity Plus (Flutter Community)</div>
+      <p>Used to monitor network connectivity status. No personal data is transmitted.</p>
+    </div>
+  </section>
+
+  <!-- 5. Advertising ID & Opt-Out -->
+  <section>
+    <h2>Advertising ID &amp; Opt-Out</h2>
+    <p>
+      Flowly uses the Android Advertising ID (GAID) via AdMob to show relevant ads.
+      You can reset or opt out of personalised advertising at any time:
+    </p>
+    <ul>
+      <li>Open your device <strong style="color:var(--white)">Settings</strong></li>
+      <li>Go to <strong style="color:var(--white)">Google → Ads</strong></li>
+      <li>Tap <strong style="color:var(--white)">"Delete advertising ID"</strong> or toggle
+        <strong style="color:var(--white)">"Opt out of Ads Personalisation"</strong></li>
+    </ul>
+    <p style="margin-top:12px;">
+      You will still see ads after opting out, but they will not be personalised.
+    </p>
+  </section>
+
+  <!-- 6. Data Retention -->
+  <section>
+    <h2>Data Retention</h2>
+    <p>
+      Game progress and purchase expiry data stored on your device is retained until you uninstall
+      Flowly or clear the app's data through Android Settings.
+    </p>
+    <p>
+      Data collected by Google AdMob and Google Play is governed by Google's own retention policies.
+      chAs Tech Group does not operate any server-side database for Flowly user data.
+    </p>
+  </section>
+
+  <!-- 7. Children's Privacy -->
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>
+      Flowly is not directed at children under the age of 13. We do not knowingly collect personal
+      information from children under 13. If you are a parent or guardian and believe your child
+      has provided personal information, please contact us and we will take steps to delete such
+      information.
+    </p>
+    <p>
+      AdMob is configured to serve general-audience ads. We do not use child-directed ad settings.
+    </p>
+  </section>
+
+  <!-- 8. Data Security -->
+  <section>
+    <h2>Data Security</h2>
+    <p>
+      All game data is stored locally on your device. We do not transmit personal data to external
+      servers. Network requests made by the app are limited to ad loading (AdMob), purchase verification
+      (Google Play Billing), and connectivity checks (to public endpoints such as
+      <code style="font-size:13px;color:var(--cyan);">connectivitycheck.gstatic.com</code>).
+    </p>
+    <p>
+      While no method of transmission over the internet is 100% secure, we follow industry best
+      practices and rely on Google's infrastructure for all sensitive operations.
+    </p>
+  </section>
+
+  <!-- 9. Your Rights -->
+  <section>
+    <h2>Your Rights</h2>
+    <p>Depending on your jurisdiction you may have the right to:</p>
+    <ul>
+      <li>Access the data held about you by third-party services (Google)</li>
+      <li>Request deletion of your Advertising ID or opt out of personalised ads</li>
+      <li>Clear all locally stored game data by uninstalling the app or clearing app data</li>
+      <li>Contact us with any privacy concerns or requests</li>
+    </ul>
+  </section>
+
+  <!-- 10. Changes to This Policy -->
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. When we do, we will update the
+      "Last updated" date at the top of this page. We encourage you to review this policy
+      periodically. Continued use of Flowly after changes constitutes acceptance of the
+      updated policy.
+    </p>
+  </section>
+
+  <!-- 11. Contact -->
+  <section>
+    <h2>Contact Us</h2>
+    <p>If you have any questions or concerns about this Privacy Policy, contact us at:</p>
+    <div class="contact-card">
+      <p style="color:var(--white);font-family:'Syne',sans-serif;font-weight:700;font-size:16px;">
+        chAs Tech Group
+      </p>
+      <p>App: <strong style="color:var(--white)">Flowly — Color Sort Puzzle</strong></p>
+      <p>Package: <code style="color:var(--cyan);font-size:13px;">com.chastechgroup.flowly</code></p>
+      <p>Email: <a href="mailto:privacy@chastechgroup.com">privacy@chastechgroup.com</a></p>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 chAs Tech Group. All rights reserved.</p>
+    <span class="footer-logo">Flowly</span>
+  </footer>
+
+</div>
+</body>
+</html>
